@@ -38,6 +38,14 @@ If you use for example the atlas postprocessor, add a new environment valirable:
 -e ATLAS_TOKEN=$ATLAS_TOKEN
 ```
 
+## alias
+
+You can make life easier by aliasing the `docker run <OPTIONS> packer`
+
+```
+alias packer='docker run -t -v $(pwd):/data -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY -e ATLAS_TOKEN=$ATLAS_TOKEN  packer'
+```
+
 ## tl;dr
 
 Packer has some [issues](https://github.com/mitchellh/goamz/issues/120), 
