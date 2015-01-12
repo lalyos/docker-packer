@@ -45,6 +45,13 @@ You can make life easier by aliasing the `docker run <OPTIONS> packer`
 ```
 alias packer='docker run -t -v $(pwd):/data -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY -e ATLAS_TOKEN=$ATLAS_TOKEN  packer'
 ```
+this way you can use the patched packer version as easy as:
+
+```
+$ packer version
+
+Packer v0.7.5.dev (8fea99151657f1c36b4e13b190eb15acca248592+CHANGES)
+```
 
 ## tl;dr
 
