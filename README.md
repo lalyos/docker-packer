@@ -38,3 +38,21 @@ If you use for example the atlas postprocessor, add a new environment valirable:
 -e ATLAS_TOKEN=$ATLAS_TOKEN
 ```
 
+## tl;dr
+
+Packer has some [issues](https://github.com/mitchellh/goamz/issues/120), 
+when using the **amazon-ebs** builder against:
+
+ * eu-central-1
+ * cn-north-1
+
+The 2 new region uses the latest v4 signature algorithm for ec2. Packer uses
+the [goamz](https://github.com/mitchellh/goamz) library which doesn't yet switched
+for the latest sign algorythm.
+
+There is an open [pull request](https://github.com/mitchellh/goamz/pull/154) which
+is used to fix packer.
+
+
+
+
