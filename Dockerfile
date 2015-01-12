@@ -13,8 +13,11 @@ RUN cd /go/src/github.com/mitchellh/goamz \
 	&& curl -L https://github.com/mitchellh/goamz/pull/154.patch \
 	| git am --signoff
 
-RUN cd /go/src/github.com/mitchellh/packer/ \
-	&& make dev
+WORKDIR /go/src/github.com/mitchellh/packer
+
+# set VersionPrerelease to see the git commit in packer version output
+RUN sed -i 's/VersionPrerelease = ""/VersionPrerelease = "dev"/' version.go
+RUN make dev
 
 VOLUME /data
 WORKDIR /data
